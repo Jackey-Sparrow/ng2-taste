@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2015/12/23.
  */
-import {Component} from 'angular2/core';
+import {Component,ngModel} from 'angular2/core';
 
 interface Hero {
     id:number;
@@ -10,8 +10,14 @@ interface Hero {
 
 @Component({
     selector: 'my-app',
-    template: `<h1>{{title}}</h1>
-         <h2>{{myHero.name}} details!</h2>`
+    template: `
+         <h1>{{title}}</h1>
+         <h2>{{myHero.name}} details!</h2>
+         <div><label>id:</label>{{myHero.id}}</div>
+         <div>
+            <label>name:</label>
+            <div><input [(ngModel)]="myHero.name" placeholder="name"/></div>
+        </div>`
 })
 
 export class AppComponent {
