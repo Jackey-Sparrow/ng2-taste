@@ -19,8 +19,9 @@ interface Hero {
             <div><input [(ngModel)]="myHero.name" placeholder="name"/></div>
         </div>
         <h2>heros:</h2>
+        <h3 *ngIf="selectedHero">selected hero:{{selectedHero.name}}</h3>
         <ul>
-            <li *ngFor="#hero of heros">
+            <li *ngFor="#hero of heros" (click)="onSelect(hero)">
                 <span>{{hero.id}}</span>{{hero.name}}
             </li>
         </ul>
@@ -32,6 +33,7 @@ export class AppComponent {
     title:string;
     myHero:Hero;
     heros:Hero[];
+    selectedHero:Hero;
 
     constructor() {
         this.title = 'Tour of Heroes';
@@ -39,15 +41,20 @@ export class AppComponent {
             id: 1,
             name: 'Jackey'
         };
+
         this.heros = [
-            {id: 1, name: 'Jackey'},
-            {id: 2, name: 'Jackey'},
-            {id: 3, name: 'Jackey'},
-            {id: 4, name: 'Jackey'},
-            {id: 5, name: 'Jackey'},
-            {id: 6, name: 'Jackey'},
-            {id: 7, name: 'Jackey'}
+            {id: 1, name: 'Jackey1'},
+            {id: 2, name: 'Jackey2'},
+            {id: 3, name: 'Jackey3'},
+            {id: 4, name: 'Jackey4'},
+            {id: 5, name: 'Jackey5'},
+            {id: 6, name: 'Jackey6'},
+            {id: 7, name: 'Jackey7'}
         ];
+    }
+
+    onSelect(hero:Hero) {
+        this.selectedHero = hero;
     }
 
 }
