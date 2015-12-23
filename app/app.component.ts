@@ -1,9 +1,10 @@
 /**
  * Created by Administrator on 2015/12/23.
  */
-import {Component,ngModel} from 'angular2/core';
+import {Component,OnInit} from 'angular2/core';
 import {Hero} from './hero';
 import {HeroDetailComponent} from './hero-detail-component';
+import {HeroService} from './hero-service';
 
 @Component({
     selector: 'my-app',
@@ -21,26 +22,26 @@ import {HeroDetailComponent} from './hero-detail-component';
     styles: [`
        .selected { background-color: #EEE; color: #369; }
     `],
-    directives: [HeroDetailComponent]
+    directives: [HeroDetailComponent],
+    providers: [HeroService]
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
     title:string;
     heros:Hero[];
     selectedHero:Hero;
 
-    constructor() {
+    constructor(private _heroService:HeroService) {
         this.title = 'Tour of Heroes';
-        this.heros = [
-            {id: 1, name: 'Jackey1'},
-            {id: 2, name: 'Jackey2'},
-            {id: 3, name: 'Jackey3'},
-            {id: 4, name: 'Jackey4'},
-            {id: 5, name: 'Jackey5'},
-            {id: 6, name: 'Jackey6'},
-            {id: 7, name: 'Jackey7'}
-        ];
+    }
+
+    getHeros() {
+        this._heroService.getHeros().then(heros=>this.heros = heros);
+    }
+
+    ngOnInit() {
+        this.getHeros();
     }
 
     onSelect(hero:Hero) {
