@@ -17,13 +17,21 @@ interface Hero {
          <div>
             <label>name:</label>
             <div><input [(ngModel)]="myHero.name" placeholder="name"/></div>
-        </div>`
+        </div>
+        <h2>heros:</h2>
+        <ul>
+            <li *ngFor="#hero of heros">
+                <span>{{hero.id}}</span>{{hero.name}}
+            </li>
+        </ul>
+        `
 })
 
 export class AppComponent {
 
     title:string;
     myHero:Hero;
+    heros:Hero[];
 
     constructor() {
         this.title = 'Tour of Heroes';
@@ -31,6 +39,15 @@ export class AppComponent {
             id: 1,
             name: 'Jackey'
         };
+        this.heros = [
+            {id: 1, name: 'Jackey'},
+            {id: 2, name: 'Jackey'},
+            {id: 3, name: 'Jackey'},
+            {id: 4, name: 'Jackey'},
+            {id: 5, name: 'Jackey'},
+            {id: 6, name: 'Jackey'},
+            {id: 7, name: 'Jackey'}
+        ];
     }
 
 }
