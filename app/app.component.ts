@@ -5,7 +5,8 @@ import {Component} from 'angular2/core';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>{{title}}</h1><h2>{{myHero}} details!</h2>'
+    template: `<h1>{{title}}</h1>
+         <h2>{{myHero}} details!</h2>`
 })
 export class AppComponent {
 
@@ -16,5 +17,5 @@ export class AppComponent {
         this.title = 'Tour of Heroes';
         this.myHero = 'Jackey';
     }
-    
+
 }
