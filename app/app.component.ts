@@ -21,11 +21,14 @@ interface Hero {
         <h2>heros:</h2>
         <h3 *ngIf="selectedHero">selected hero:{{selectedHero.name}}</h3>
         <ul>
-            <li *ngFor="#hero of heros" (click)="onSelect(hero)">
+            <li [class.selected]="hero===selectedHero" *ngFor="#hero of heros" (click)="onSelect(hero)">
                 <span>{{hero.id}}</span>{{hero.name}}
             </li>
         </ul>
-        `
+        `,
+    styles: [`
+       .selected { background-color: #EEE; color: #369; }
+    `]
 })
 
 export class AppComponent {
