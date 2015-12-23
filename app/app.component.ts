@@ -2,11 +2,7 @@
  * Created by Administrator on 2015/12/23.
  */
 import {Component,ngModel} from 'angular2/core';
-
-interface Hero {
-    id:number;
-    name:string;
-}
+import {Hero} from './hero';
 
 @Component({
     selector: 'my-app',
