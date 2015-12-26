@@ -11,6 +11,7 @@
     <script src="lib/typescript.js"></script>
     <script src="lib/Rx.js"></script>
     <script src="lib/angular2.dev.js"></script>
+    <script src="lib/router.dev.js"></script>
 
     <!-- 2. Configure SystemJS -->
     <script>
@@ -19,7 +20,7 @@
             typescriptOptions: {emitDecoratorMetadata: true},
             packages: {'app': {defaultExtension: 'ts'}}
         });
-        System.import('app/boot')
+        System.import('app/app')
                 .then(null, console.error.bind(console));
     </script>
 
@@ -27,7 +28,7 @@
 
 <!-- 3. Display the application -->
 <body>
-<my-app>Loading...</my-app>
+<hi-hi>Loading...</hi-hi>
 </body>
 
 </html>

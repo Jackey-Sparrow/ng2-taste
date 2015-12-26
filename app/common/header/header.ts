@@ -12,7 +12,8 @@ import {Component} from 'angular2/core';
                 <li class="nav-tab active"><a >Home</a></li>
                 <li class="nav-tab"><a >About</a></li>
             </ul>
-        </div>`
+        </div>
+        `
 })
 
 export class HeaderComponent{}

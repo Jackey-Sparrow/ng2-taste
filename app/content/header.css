@@ -24,7 +24,7 @@
     height: 60px;
 }
 
-.header-container ul .active {
+.header-container ul .router-link-active {
     background: #006bc7;
 }
 

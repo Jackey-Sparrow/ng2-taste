@@ -4,13 +4,11 @@
 import {Component,OnInit} from 'angular2/core';
 import {Hero} from './hero';
 import {HeroDetailComponent} from './hero-detail-component';
-import {HeaderComponent} from './common/header/header';
 import {HeroService} from './hero-service';
 
 @Component({
     selector: 'my-app',
     template: `
-        <header-component></header-component>
          <h1>{{title}}</h1>
          <my-hero-detail [hero]="selectedHero"></my-hero-detail>
         <h2>heros:</h2>
@@ -24,7 +22,7 @@ import {HeroService} from './hero-service';
     styles: [`
        .selected { background-color: #EEE; color: #369; }
     `],
-    directives: [HeroDetailComponent, HeaderComponent],
+    directives: [HeroDetailComponent],
     providers: [HeroService]
 })
 
