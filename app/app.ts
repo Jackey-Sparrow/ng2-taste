@@ -20,7 +20,7 @@ import {AboutComponent} from './about/about'
         <div>
              <div class='header-container'>
                 <ul>
-                    <li><a  class="logo"><img/></a></li>
+                    <li><a  class="logo"><img src="common/content/images/logo.png"/></a></li>
                     <li class="nav-tab active">
                         <a [routerLink]="['./Home']">Home</a>
                     </li>
@@ -50,5 +50,5 @@ class AppCmp {
 
 bootstrap(AppCmp, [
     ROUTER_PROVIDERS,
-    provide(APP_BASE_HREF, {useValue: '/my/app'})
+    provide(APP_BASE_HREF, {useValue: '/index.html'})
 ]);
